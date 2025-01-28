@@ -13,6 +13,16 @@ import com.app.accounts.dto.ErrorResponseDto;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<ErrorResponseDto> handleGenericException(Exception exception, WebRequest webRequest) {
+    ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
+        webRequest.getDescription(false),
+        HttpStatus.INTERNAL_SERVER_ERROR,
+        "An unexpected error occurred",
+        LocalDateTime.now());
+    return new ResponseEntity<>(errorResponseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+  }
+
   @ExceptionHandler(CustomerAlreadyExistsException.class)
   public ResponseEntity<ErrorResponseDto> handleCustomerAlreadyExistsException(CustomerAlreadyExistsException exception,
       WebRequest webRequest) {
