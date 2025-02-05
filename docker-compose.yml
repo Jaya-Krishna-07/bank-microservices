@@ -1,0 +1,29 @@
+services:
+  accounts:
+    image: "jayakrishna07/accounts:1"
+    container_name: accounts-ms
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - bank-ms
+  cards:
+    image: "jayakrishna07/cards:1"
+    container_name: cards-ms
+    mem_limit: 700m
+    ports:
+      - "8081:8080"
+    networks:
+      - bank-ms
+  loans:
+    image: "jayakrishna07/loans:1"
+    container_name: loans-ms
+    mem_limit: 700m
+    ports:
+      - "8082:8080"
+    networks:
+      - bank-ms
+
+networks:
+  bank-ms:
+    driver: bridge
