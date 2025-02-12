@@ -1,9 +1,12 @@
 [submodule "accounts"]
 	path = accounts
-	url = https://github.com/Jaya-Krishna-07/accounts-service.git
+  url = git@github.com:Jaya-Krishna-07/accounts-service.git
 [submodule "cards"]
 	path = cards
-	url = https://github.com/Jaya-Krishna-07/cards-service.git
+  url = git@github.com:Jaya-Krishna-07/cards-service.git
 [submodule "loans"]
 	path = loans
-	url = https://github.com/Jaya-Krishna-07/loans-service.git
+  url = git@github.com:Jaya-Krishna-07/loans-service.git
+[submodule "configserver"]
+	path = configserver
+	url = git@github.com:Jaya-Krishna-07/configserver.git
